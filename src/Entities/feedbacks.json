@@ -1,0 +1,62 @@
+
+{
+  "name": "feedbacks",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["clientId", "clientName", "appointmentId", "rating", "createdAt"],
+        "properties": {
+          "clientId": {
+            "bsonType": "string",
+            "description": "ID do cliente"
+          },
+          "clientName": {
+            "bsonType": "string",
+            "description": "Nome do cliente"
+          },
+          "appointmentId": {
+            "bsonType": "string",
+            "description": "ID do agendamento"
+          },
+          "rating": {
+            "bsonType": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Avaliação de 1 a 5 estrelas"
+          },
+          "serviceQuality": {
+            "bsonType": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Qualidade do serviço"
+          },
+          "attendance": {
+            "bsonType": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Qualidade do atendimento"
+          },
+          "scheduling": {
+            "bsonType": "int",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Experiência de agendamento"
+          },
+          "comment": {
+            "bsonType": "string",
+            "description": "Comentários e sugestões"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data do feedback"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

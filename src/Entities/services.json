@@ -1,0 +1,54 @@
+
+{
+  "name": "services",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["name", "price", "duration", "category", "createdAt"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Nome do serviço"
+          },
+          "description": {
+            "bsonType": "string",
+            "description": "Descrição do serviço"
+          },
+          "price": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Preço do serviço"
+          },
+          "duration": {
+            "bsonType": "int",
+            "minimum": 15,
+            "description": "Duração em minutos"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["corte", "coloracao", "tratamento", "escova", "manicure", "outros"],
+            "description": "Categoria do serviço"
+          },
+          "active": {
+            "bsonType": "bool",
+            "description": "Se o serviço está ativo"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

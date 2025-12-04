@@ -1,0 +1,71 @@
+
+{
+  "name": "appointments",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["clientId", "clientName", "service", "date", "time", "price", "duration", "status", "createdAt"],
+        "properties": {
+          "clientId": {
+            "bsonType": "string",
+            "description": "ID do cliente"
+          },
+          "clientName": {
+            "bsonType": "string",
+            "description": "Nome do cliente"
+          },
+          "service": {
+            "bsonType": "string",
+            "description": "Serviço a ser realizado"
+          },
+          "date": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data do agendamento"
+          },
+          "time": {
+            "bsonType": "string",
+            "description": "Horário do agendamento (HH:mm)"
+          },
+          "price": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Valor do serviço"
+          },
+          "duration": {
+            "bsonType": "int",
+            "minimum": 15,
+            "description": "Duração em minutos"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["agendado", "confirmado", "realizado", "cancelado"],
+            "description": "Status do agendamento"
+          },
+          "products": {
+            "bsonType": "string",
+            "description": "Produtos utilizados"
+          },
+          "notes": {
+            "bsonType": "string",
+            "description": "Observações do atendimento"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "combos",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["name", "services", "price", "discount", "active", "createdAt"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Nome do combo"
+          },
+          "description": {
+            "bsonType": "string",
+            "description": "Descrição do combo"
+          },
+          "services": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "IDs dos serviços incluídos"
+          },
+          "price": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Preço do combo"
+          },
+          "originalPrice": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Preço original sem desconto"
+          },
+          "discount": {
+            "bsonType": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Porcentagem de desconto"
+          },
+          "duration": {
+            "bsonType": "int",
+            "minimum": 15,
+            "description": "Duração total em minutos"
+          },
+          "active": {
+            "bsonType": "bool",
+            "description": "Se o combo está ativo"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,63 @@
+
+{
+  "name": "reminders",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["clientId", "clientName", "type", "scheduledDate", "message", "status", "createdAt"],
+        "properties": {
+          "clientId": {
+            "bsonType": "string",
+            "description": "ID do cliente"
+          },
+          "clientName": {
+            "bsonType": "string",
+            "description": "Nome do cliente"
+          },
+          "type": {
+            "bsonType": "string",
+            "enum": ["manutencao", "aniversario", "promocao", "milestone"],
+            "description": "Tipo de lembrete"
+          },
+          "scheduledDate": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data programada para envio"
+          },
+          "sentDate": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de envio"
+          },
+          "message": {
+            "bsonType": "string",
+            "description": "Mensagem do lembrete"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["pendente", "enviado", "cancelado"],
+            "description": "Status do lembrete"
+          },
+          "lastService": {
+            "bsonType": "string",
+            "description": "Último serviço realizado"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

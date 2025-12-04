@@ -1,0 +1,63 @@
+
+{
+  "name": "clients",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["name", "whatsapp", "createdAt"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "description": "Nome completo do cliente"
+          },
+          "whatsapp": {
+            "bsonType": "string",
+            "description": "Número WhatsApp com DDD"
+          },
+          "email": {
+            "bsonType": "string",
+            "description": "Email do cliente (opcional)"
+          },
+          "totalSpent": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Total gasto no salão"
+          },
+          "visitCount": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Número de visitas"
+          },
+          "lastVisit": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data da última visita"
+          },
+          "birthday": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de aniversário"
+          },
+          "notes": {
+            "bsonType": "string",
+            "description": "Observações sobre o cliente"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de cadastro"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
