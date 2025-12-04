@@ -1,4 +1,4 @@
-# GlowUp-
+# GlowUp
 Sistema para salões de beleza
 
 Aplicação React usando Vite.
